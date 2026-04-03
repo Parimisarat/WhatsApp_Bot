@@ -147,12 +147,15 @@ async function connectToWhatsApp() {
 
                     const jid = `91${phone}@s.whatsapp.net`;
 
-                    const text = `Dear Sir/Mam,
+                    const dateObj = new Date();
+                    const currentDate = `${String(dateObj.getDate()).padStart(2, '0')}/${String(dateObj.getMonth() + 1).padStart(2, '0')}/${dateObj.getFullYear()}`;
 
-${name}
-Outstanding Amount: ${amount}
+                    const text = `Dear ${name},
 
-Thanks`;
+📅 Date: ${currentDate}
+➡️ Total Outstanding: ₹${amount}
+
+Thank you 🙏`;
 
                     if (sent > 0) await sleep(15000);
 
